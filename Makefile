@@ -11,7 +11,7 @@ csrankings.js: csrankings.ts
 	@echo "Rebuilding JavaScript code."
 	tsc --noImplicitAny --noImplicitReturns csrankings.ts
 
-update-dblp:
+update-dblp: 
 	@echo "Downloading from DBLP."
 	rm -f dblp.xml.gz
 	wget http://dblp.uni-trier.de/xml/dblp.xml.gz
@@ -41,3 +41,13 @@ generated-author-info.csv: faculty-affiliations.csv dblp.xml util/regenerate-dat
 	pypy util/regenerate-data.py
 	@echo "Done."
 
+TMP=/tmp/out
+
+docker:
+	docker build -t csrankings:16.04 .
+	mkdir -p $(TMP)
+	docker run -it -v $(TMP):/out csrankings:16.04 cp /website/generated-author-info.csv /out/
+	cp $(TMP)/generated-author-info.csv .
+
+#	docker run -it -v $(TMP)/out:/out csrankings:16.04 cp /website/*.log /out/
+#	cp $(TMP)/*.log $(TMP)/generated-author-info.csv .
