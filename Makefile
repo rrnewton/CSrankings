@@ -24,6 +24,9 @@ home-pages: faculty-affiliations.csv
 	@echo "Rebuilding home pages."
 	@python util/make-web-pages.py >> homepages.csv
 
+homepages.csv: faculty-affiliations.csv
+	$(MAKE) home-pages
+
 fix-affiliations: faculty-affiliations.csv
 	@echo "Updating affiliations."
 	@python util/fix-affiliations.py | sort -k2 -t"," | uniq > /tmp/f1.csv
