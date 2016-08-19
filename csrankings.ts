@@ -35,12 +35,12 @@ var useDenseRankings    = false;   /* Set to true for "dense rankings" vs. "comp
 const areas : Array<string> = [ "ai", "vision", "mlmining",  "nlp",  "web", 
 				"arch",  "networks",  "security", "database", "highperf", "mobile", "metrics", "opsys", "proglang", "softeng",
 				"theory",  "crypto", "logic",
-				"graphics", "hci", "robotics"];
+				"graphics", "hci", "bioinfo", "robotics"];
 
 const areaNames : Array<string> = ["AI", "Vision", "ML", "NLP", "Web & IR",
 				   "Arch", "Networks", "Security", "DB", "HPC", "Mobile", "Metrics", "OS", "PL", "SE",
 				   "Theory", "Crypto", "Logic",
-				   "Graphics", "HCI", "Robotics"];
+				   "Graphics", "HCI", "BioInformatics", "Robotics"];
 
 var areaDict : {[key : string] : string } = {};
 var areaPosition : {[key : string] : number } = {};
@@ -554,6 +554,7 @@ function countPapers(areacount : {[key:string] : number},
 	const year = authors[r].year;
 	const areaDept = area+dept;
 	areaDeptAdjustedCount[areaDept] = 0;
+
 	if ((weights[area] == 0) || (year < startyear) || (year > endyear)) {
 	    continue;
 	}
