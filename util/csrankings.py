@@ -69,7 +69,6 @@ areadict = {
     'mobile' : ['MobiSys','MobiCom','MOBICOM','SenSys'],
     'robotics' : ['ICRA','IROS','Robotics: Science and Systems'],
     'crypto' : ['CRYPTO', 'CRYPTO (1)', 'CRYPTO (2)', 'EUROCRYPT', 'EUROCRYPT (1)', 'EUROCRYPT (2)']
-    'bioinfo' : [ 'RECOMB', 'ISMB' ] 
 }
 
 # Build a dictionary mapping conferences to areas.
