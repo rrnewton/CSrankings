@@ -96,7 +96,7 @@ collab-graph: generated-author-info.csv faculty-coauthors.csv
 
 # Build and run under Docker:
 docker:
-#	docker build -t csrankings .
+	docker build -t csrankings .
 	@echo "------------------------------------------------------------"
 	@echo "Next, open http://localhost:8000 in your browser."
 	@echo "------------------------------------------------------------"
