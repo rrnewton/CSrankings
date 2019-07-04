@@ -20,5 +20,5 @@ CMD ["python3", "-m", "http.server"]
 
 # Run with, e.g.:
 #   docker build -t csrankings .
-#   docker run -it --rm -p 0.0.0.0::8000 csrankings 
+#   docker run -it --rm -p 127.0.0.1:8000:8000 csrankings
 # Then open http://localhost:8000 in your browser.
